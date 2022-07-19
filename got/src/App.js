@@ -1,4 +1,5 @@
 import React from 'react'
+import Character from './components/Character';
 
 class App extends React.Component {
   constructor () {
@@ -23,8 +24,11 @@ class App extends React.Component {
 
 	render() {
 		return(
+      <>
 			<h1>Game of thrones</h1>
-		)
+      <Character/>
+      </>
+    )
 	}
 }
 
