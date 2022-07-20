@@ -1,5 +1,6 @@
 import React from 'react'
 import Character from './components/Character';
+import './App.css';
 
 class App extends React.Component {
   constructor () {
@@ -27,20 +28,24 @@ class App extends React.Component {
 	render() {
     console.log(this.state.characters)
 		return(
-      <>
-			<h1>Game of thrones</h1>
-      
-      {/* {console.log("this.state", this.state)} */}
-      
-      {this.state.characters.map((character) => (
+      <div className='page'>
+        <h1>Game of thrones</h1>
+        {/* {console.log("this.state", this.state)} */}
         
-        <Character 
-          fullName = {character.fullName}
-          title = {character.title}
-          image = {character.imageUrl}
-        />
-      ))}
-      </>
+        <div className='wrapper'>
+          {this.state.characters.map((character) => (
+            
+          <div className='presentation'>
+              <Character 
+              image = {character.imageUrl}
+              fullName = {character.fullName}
+              title = {character.title}
+              />
+          </div>
+          
+          ))}
+        </div>
+      </div>
     )
 	}
 }
